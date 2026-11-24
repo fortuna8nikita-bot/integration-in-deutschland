@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Brandenburg Helfer",
+    "slug": "brandenburg-helfer",
+    "scheme": "bbhelfer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "android": {
+      "package": "de.brandenburg.helfer",
+      "permissions": ["INTERNET"],
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "extra": {
+      "appUrl": "https://REPLACE-WITH-PUBLISHED-SITE"
+    }
+  }
+}

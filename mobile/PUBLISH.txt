@@ -1,0 +1,18 @@
+Публикация Android через Expo
+
+Подпись APK уже создана локально:
+- mobile/upload.keystore — ключ подписи
+- mobile/credentials.json — этот ключ подхватывает EAS (credentialsSource: local)
+- mobile/keystore.properties — пароль и alias upload
+
+Ключ не выкладывайте в открытый доступ. Без этого файла обновление в Google Play с той же подписью будет невозможно.
+
+1. Опубликуйте сайт в Grok и вставьте ссылку в mobile/app.json → extra.appUrl (только https).
+2. Установите Node.js 22 и аккаунт на https://expo.dev
+3. В папке mobile выполните: npm install
+4. Проверка WebView без телефона: node --experimental-strip-types --test policy.test.ts
+5. Войдите: npx eas-cli login
+6. Подписанный тестовый APK: npx eas-cli build -p android --profile preview
+7. Подписанный файл для Google Play: npx eas-cli build -p android --profile production
+
+WebView открывает только https, блокирует смешанный контент и сторонние cookie, показывает индикатор загрузки. Почта (mailto) и звонок (tel) разрешены.
